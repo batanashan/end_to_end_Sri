@@ -1,15 +1,16 @@
 [
-    {
+    {   "id":"email",
         "lbl":"Email",
         "name":"email",
         "type":"text",
         "errMsg":"",
-        "value":"sirisa"
+        "value":""
     },
-    {
+    {    "id":"pwd",
         "lbl":"Password",
         "name":"pwd",
         "type":"password",
-        "errMsg":""
+        "errMsg":"",
+        "value":""
     }
 ]

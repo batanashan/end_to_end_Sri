@@ -3,18 +3,26 @@ import Input from '@/Components/Input'
 import React, { useState } from 'react'
 import configuration from './configuration.json'
 const Login = () => {
+    const [inputCntrls,setInputCntrls]=useState(configuration)
     const [data,setData]=useState({})
     const fnChange =(eve)=>{
         const {name,value}=eve.target;
-setData({
-    ...data,
-    [name]:value})
-console.log(data)
+        const inputClonedObj = JSON.parse(JSON.stringify(inputCntrls))
+       const inputObject =  inputClonedObj.find((obj)=>{
+            return obj.name===name
+        })
+       inputObject.errMsg=""
+        inputObject.value=value;
+        if(!value){
+            inputObject.errMsg="Please Enter"
+        }
+    
+        setInputCntrls( inputClonedObj )
     }
   return (
     <div>
      {
-        configuration.map((obj,ind)=>{
+        inputCntrls.map((obj,ind)=>{
 return <Input key={`input_${ind}`}   {...obj} fnChange={fnChange}/>
         })
      }
