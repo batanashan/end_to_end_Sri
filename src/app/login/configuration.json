@@ -1,0 +1,15 @@
+[
+    {
+        "lbl":"Email",
+        "name":"email",
+        "type":"text",
+        "errMsg":"",
+        "value":"sirisa"
+    },
+    {
+        "lbl":"Password",
+        "name":"pwd",
+        "type":"password",
+        "errMsg":""
+    }
+]
