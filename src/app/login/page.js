@@ -2,20 +2,12 @@
 import Input from '@/Components/Input'
 import React, { useState } from 'react'
 import configuration from './configuration.json'
+import {fnFieldValidation} from '../../validations/validation.js'
 const Login = () => {
     const [inputCntrls,setInputCntrls]=useState(configuration)
     const [data,setData]=useState({})
     const fnChange =(eve)=>{
-        const {name,value}=eve.target;
-        const inputClonedObj = JSON.parse(JSON.stringify(inputCntrls))
-       const inputObject =  inputClonedObj.find((obj)=>{
-            return obj.name===name
-        })
-       inputObject.errMsg=""
-        inputObject.value=value;
-        if(!value){
-            inputObject.errMsg="Please Enter"
-        }
+    const   inputClonedObj = fnFieldValidation(eve,inputCntrls)
     
         setInputCntrls( inputClonedObj )
     }

@@ -4,13 +4,15 @@
         "name":"email",
         "type":"text",
         "errMsg":"",
-        "value":""
+        "value":"",
+        "criteria":["Required","EmailFormat"]
     },
     {    "id":"pwd",
         "lbl":"Password",
         "name":"pwd",
         "type":"password",
         "errMsg":"",
-        "value":""
+        "value":"",
+        "criteria":["Required","Min6Char"]
     }
 ]
