@@ -1,0 +1,75 @@
+[
+    
+    {   "id":"name",
+        "lbl":"Full Name",
+        "name":"name",
+        "type":"text",
+        "errMsg":"",
+        "value":"",
+        "criteria":["Required"]
+    },
+    {   "id":"email",
+        "lbl":"Email",
+        "name":"email",
+        "type":"text",
+        "errMsg":"",
+        "value":"",
+        "criteria":["Required","EmailFormat"]
+    },
+    {    "id":"pwd",
+        "lbl":"Password",
+        "name":"pwd",
+        "type":"password",
+        "errMsg":"",
+        "value":"",
+        "criteria":["Required","Min6Char"]
+    }
+    ,
+    {   "id":"Phno",
+        "lbl":"Phone Number",
+        "name":"phn",
+        "type":"number",
+        "errMsg":"",
+        "value":"",
+        "criteria":["Required","Exact_10_digits"]
+    },
+    {   "id":"gender",
+        "lbl":"Gender",
+        "name":"gender",
+        "type":"radio",
+        "errMsg":"",
+        "value":"",
+        "options":["Male","Female"],
+        "values":["M","F"],
+        "criteria":["Required"]
+    },
+    {   "id":"checkbox",
+    "lbl":"Hobbies",
+    "name":"hob",
+    "type":"checkbox",
+    "errMsg":"",
+    "value":"",
+    "options":["cricket","Reading","Football","Dance","Singing"],
+    "values":["cri","rea","ft","dan","sin"],
+    "criteria":["Required"]
+},
+{   "id":"country",
+"lbl":"Country",
+"name":"country",
+"tag":"select",
+"errMsg":"",
+"value":"",
+"options":["India","Pakistan","Korea","China"],
+"values":["ind","pak","kor","chi"],
+"criteria":["Required"]
+},
+{   "id":"address",
+"lbl":"Address",
+"name":"add",
+"tag":"textarea",
+"errMsg":"",
+"value":"",
+
+"criteria":["Required"]
+}
+]

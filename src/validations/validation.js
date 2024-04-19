@@ -10,24 +10,64 @@ export const appValidation = {
     "Min6Char":{
 regex:/^[a-zA-Z0-9&$#@*_]{6,11}$/,
 errorMsg:"Minimum 6 characters required"
+    },
+    "Exact_10_digits":{
+        regex:/^[0-9]{10}$/,
+        errorMsg:"Enter 10 digits only"
     }
 }
 
+
+
+export const validationCriteria = (inputObject)=>{
+    for(let i=0 ;i<inputObject.criteria.length;i++){
+         
+        const {regex, errorMsg} = appValidation[ inputObject.criteria[i]]
+        if(!regex.test(inputObject.value)){
+          inputObject.errMsg=errorMsg
+          break;
+        }
+      }
+}
+
  export const fnFieldValidation = (eve,inputCntrls)=>{
-    const {name,value}=eve.target;
+    debugger;
+    const {name,value,type,checked}=eve.target;
     const inputClonedObj = JSON.parse(JSON.stringify(inputCntrls))
    const inputObject =  inputClonedObj.find((obj)=>{
         return obj.name===name
     })
- inputObject.errMsg=""
+    inputObject.errMsg=""
+if(type === "checkbox"){
+const checkedValues = inputObject.value ? inputObject.value.split(',') : [] ;
+if(checked){
+    checkedValues.push(value)
+}
+else{
+    const index = checkedValues.indexOf(value)
+    checkedValues.splice(index,1)
+   
+}
+inputObject.value = checkedValues.join(',')
+}else{
     inputObject.value=value;
-    for(let i=0 ;i<inputObject.criteria.length;i++){
-         
-      const {regex, errorMsg} = appValidation[ inputObject.criteria[i]]
-      if(!regex.test(value)){
-        inputObject.errMsg=errorMsg
-        break;
-      }
-    }
+}
+
+    validationCriteria(inputObject)
+  
     return inputClonedObj;
+}
+
+
+export const fnFormValidation = (inputCntrls)=>{
+
+    const inputClonedObj = JSON.parse(JSON.stringify(inputCntrls))
+ 
+const dataObject = {}
+    inputClonedObj.forEach((inputObject)=>{
+        dataObject[inputObject.name] = inputObject.value
+        validationCriteria(inputObject)
+    })
+    const isFormInvalid = inputClonedObj.some((obj)=>{return obj.errMsg})
+    return [dataObject,isFormInvalid ,inputClonedObj]
 }
