@@ -7,7 +7,7 @@ const Select = (props) => {
      <div className='col-sm-4 text-end'><b>{lbl} :</b></div>
      <div className='col-sm-4'>
         
-        <select id={id} name={name}   className='form-control' onChange={fnChange}>
+        <select id={id} name={name}  className='form-control' onChange={fnChange}>
             <option value="">select options</option>
             {
                 options.map((opt,ind)=>{

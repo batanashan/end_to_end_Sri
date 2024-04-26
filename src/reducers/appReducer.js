@@ -5,6 +5,11 @@ switch(action.type){
             ...state,
             isLoading:action.payload
         }
+        case 'LOGIN':
+            return state={
+                ...state,
+                isLoggedIn:action.payload
+            }
 }
 return state;
 }

@@ -1,0 +1,48 @@
+[
+    {
+        "id": "name",
+        "lbl": "Full Name",
+        "name": "name",
+        "type": "text",
+        "errMsg": "",
+        "value": "",
+        "criteria": [
+            "Required"
+        ]
+    },
+    {
+        "id": "email",
+        "lbl": "Email",
+        "name": "email",
+        "type": "text",
+        "errMsg": "",
+        "value": "",
+        "criteria": [
+            "Required",
+            "EmailFormat"
+        ]
+    },
+    {
+        "id": "Phno",
+        "lbl": "Phone Number",
+        "name": "phn",
+        "type": "number",
+        "errMsg": "",
+        "value": "",
+        "criteria": [
+            "Required",
+            "Exact_10_digits"
+        ]
+    },
+    {
+        "id": "address",
+        "lbl": "Address",
+        "name": "add",
+        "tag": "textarea",
+        "errMsg": "",
+        "value": "",
+        "criteria": [
+            "Required"
+        ]
+    }
+]

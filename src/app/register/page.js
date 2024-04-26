@@ -8,7 +8,7 @@ import { fnFieldValidation, fnFormValidation, fnReset } from '../../validations/
 import axios from 'axios'
 import { toast } from 'react-toastify';
 import { appCtx } from '@/constants/createCtx'
-
+import Link from 'next/link'
 const Register = () => {
   const [inputCntrls, setInputCntrls] = useState(configuration)
   const ctxData = useContext(appCtx)
@@ -61,7 +61,9 @@ const Register = () => {
 
     }
     <div className='row'>
-      <div className='offset-sm-4 col-sm-4'><button className='btn btn-primary' onClick={fnClick}>Register</button></div>
+      <div className='offset-sm-4 col-sm-4'><button className='btn btn-primary me-5' onClick={fnClick}>Register</button>
+        <Link href="/login">To Login</Link>
+      </div>
     </div>
 
   </div>
