@@ -11,7 +11,7 @@ const Select = (props) => {
             <option value="">select options</option>
             {
                 options.map((opt,ind)=>{
-                return <option key={`opt_${ind}`} value = {values[ind]}>{opt}</option>
+                return <option key={`opt_${ind}`} value={values[ind]}>{opt}</option>
                 })
             }
             </select>

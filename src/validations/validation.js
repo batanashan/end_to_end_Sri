@@ -68,6 +68,20 @@ const dataObject = {}
         dataObject[inputObject.name] = inputObject.value
         validationCriteria(inputObject)
     })
-    const isFormInvalid = inputClonedObj.some((obj)=>{return obj.errMsg})
-    return [dataObject,isFormInvalid ,inputClonedObj]
+
+    const isFormValid = inputClonedObj.some((obj) => {
+        return obj.errMsg
+    })
+    return [dataObject,isFormValid ,inputClonedObj]
+}
+
+export const fnReset = (inputCntrls)=>{
+  
+    const inputClonedObj = JSON.parse(JSON.stringify(inputCntrls))
+    inputClonedObj.forEach((inputObject)=>{
+        inputObject.value=""
+        inputObject.errMsg=""
+
+    })
+    return inputClonedObj
 }
