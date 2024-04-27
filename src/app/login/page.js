@@ -29,9 +29,10 @@ const Login = () => {
     try {
       ctxData.dispatch({ type: "LOADER", payload: true })
       const result = await axios.post("http://localhost:2020/std/login", { data: dataObject })
+     
        if(result.data.length){
-        ctxData.dispatch({type:"LOGIN",payload:true})
-        
+        ctxData.dispatch({type:"LOGIN",isLoggedIn:true,user:result.data[0]})
+        sessionStorage.userInfo =JSON.stringify(result.data[0])
          router.push('/home')
        }else{
 toast.error("Please check uid & password")

@@ -8,7 +8,8 @@ switch(action.type){
         case 'LOGIN':
             return state={
                 ...state,
-                isLoggedIn:action.payload
+                isLoggedIn:action.isLoggedIn,
+                user:action.user
             }
 }
 return state;

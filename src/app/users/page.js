@@ -25,7 +25,7 @@ setUsers(result.data)
 }
     return <div>
       <h1 className='text-center bg-primary'>Users Data</h1>
-     <Table headings={["NAME", "EMAIL", "MOBILENO", "GENDER", "COUNTRY"]} data={users} columns={["name", "email", "phn", "gender", "country"]} />
+     <Table headings={["NAME", "EMAIL", "MOBILENO", "GENDER", "COUNTRY","ADDRESS"]} data={users} columns={["name", "email", "phn", "gender", "country","add"]} />
     </div>
 }
 
